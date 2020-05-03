@@ -1,0 +1,50 @@
+.weak{
+    height: 25px;
+    background-color: gray;
+}
+.weak-logo{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    background-color:gray;
+
+}
+.ok{
+    height: 25px;
+    background-color: red;
+
+}
+.ok-logo{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: red;
+
+}
+.excellent{
+    height: 25px;
+    background-color: green;
+}
+.excellent-logo{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: green;
+}
+.good{
+    height: 25px;
+    background-color: orange;
+}
+.good-logo{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: orange;
+
+}
+.cover-chart{
+    border: grey;
+    border-radius: 5px !important;
+    width: 100%;
+    color:white;
+}

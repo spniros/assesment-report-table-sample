@@ -1,0 +1,26 @@
+
+<div class="row">
+    <div class="col-lg-12">
+      <!-- <div class="mb-3">
+        <progressbar class="progress" [value]="stacked" [max]="100"></progressbar>
+      </div> -->
+      <div  class="cover-chart">
+        <div [style.width.%]="weakCount" class="float-left weak" > </div> 
+        <div [style.width.%]="okCount"  class="float-left ok"  > </div> 
+        <div [style.width.%]="goodCount"  class="float-left good"  > </div> 
+        <div [style.width.%]="excellentCount"  class="float-left excellent"  > </div>
+         <!-- <div [style.width.%]="weakCount" class="float-left weak" >{{weakCount}} % </div> 
+         <div [style.width.%]="okCount"  class="float-left ok"  > {{okCount}} %</div> 
+         <div [style.width.%]="goodCount"  class="float-left good"  > {{goodCount}} %</div> 
+         <div [style.width.%]="excellentCount"  class="float-left excellent"  > {{excellentCount}} %</div>  -->
+      </div>
+
+    </div>
+    <div class=" row col-md-12 mt-3 mb-2">
+        <div class="col-md-3"> <div class="ok-logo float-left"></div>   Ok ({{okCount}} %)</div>
+        <div class="col-md-3"><div class="good-logo float-left"></div>   Good ({{goodCount}} %)</div>
+        <div class="col-md-3"><div class="weak-logo float-left"></div>   Weak ({{weakCount}} %)</div>
+        <div class="col-md-3"><div class="excellent-logo float-left"></div>   excellent ({{excellentCount}} %)</div>
+    </div>
+   
+  </div>

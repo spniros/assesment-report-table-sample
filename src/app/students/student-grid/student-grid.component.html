@@ -1,0 +1,79 @@
+
+
+<div class="row mt-3">
+    <div class="col-md-3 form-group">
+        <label for="">Class</label>
+        <select  class="form-control" (change)="filterClass($event.target.value);">
+            <option value="">select</option>
+            <option *ngFor="let item of classesList" value="{{item.name}}">{{item.name}}</option>
+        </select>
+    </div>
+    <div class="col-md-3 form-group">
+        <label for="">Student</label>
+        <select   class="form-control" (change)="filterStudent($event.target.value);">
+            <option value="">select</option>
+            <option *ngFor="let item of selectedStudents" value="{{item}}">{{item}}</option>
+        </select>
+    </div>
+ <div class="col-md-2">
+     <label for="DateRange">DateRange</label>
+    <input type="text" [(ngModel)]="fromDate" (ngModelChange)="dateChange()"   [bsConfig]="{ dateInputFormat: 'DD/MM/YY' }"  placeholder="Datepicker"  class="form-control"  bsDatepicker  >
+ </div>
+ <div class="col-md-1 pt-2">
+     <label for=""></label>
+    <label class="mt-4 text-center">to</label> 
+    </div>
+ <div class="col-md-2 mt-1">
+    <label for="DateRange"></label>
+   <input type="text" [(ngModel)]="toDate" (ngModelChange)="dateChange()"  [bsConfig]="{ dateInputFormat: 'DD/MM/YY' }"  placeholder="Datepicker"  class="form-control"  bsDatepicker  >
+</div>
+
+</div>
+
+<div class="row" *ngIf="!gridData.length && filteredStudent">
+    <div class="col-md-12">
+        <h2 class="text-center ">
+            No content has been completed by {{filteredStudent }} for {{fromDate | date:' dd  MMM yyyy'}} to {{toDate | date:' dd  MMM yyyy'}}. 
+        </h2>
+    </div>
+</div>
+
+
+<!-- chart -->
+<div class="row" *ngIf="gridData.length>0">
+    <div class="col-md-12">
+        <h3 class="text-center font-weight-bold">over all results for the period </h3>
+        <h4 class="text-center  font-weight-bold">{{fromDate | date:' dd  MMM' }} - {{toDate |date:' dd  MMM'}} </h4>
+    </div>
+    <div class="col-md-12">
+        <app-student-chart *ngIf="gridData.length>0" [studentResult]="gridData"></app-student-chart>
+    </div>
+</div>
+
+
+
+
+
+<table class="table table-striped border-darken-1  mt-5" *ngIf="gridData.length>0">
+    <tr class="bg-light-gray">
+        <th>Date</th>
+        <th>Content</th>
+        <!-- <th>{{item.student}}</th> -->
+        <th>Type</th>
+        <th>Skill</th>
+        <th>Result</th>
+        <th>Time</th>
+
+    </tr>
+    <tr *ngFor="let item of gridData">
+        <td>{{item.date}}</td>
+        <td>{{item.content}}</td>
+        <!-- <td>{{item.student}}</td> -->
+        <td>{{item.type}}</td>
+        <td>{{item.skill}}</td>
+        <td  > <span appMarksColor [marks]="item.values">{{item.values}}</span></td>
+        <td>{{item.time}}</td>
+    </tr>
+</table>
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"></table> -->
+

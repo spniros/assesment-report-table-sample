@@ -1,0 +1,32 @@
+.bg-light-gray{
+    background-color: lightgray;
+}
+
+:host >>> input[type=date], input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
+    /* background-color: transparent; */
+    /* border: none; */
+    border: 1px solid lightgray;
+    /* border-radius: 0; */
+    /* outline: 0; */
+    height: auto !important;
+    /* width: 100%; */
+    /* font-size: 1rem; */
+    /* box-shadow: none; */
+    /* box-sizing: content-box; */
+    -webkit-transition: all .3s;
+    /* transition: all .3s; */
+    border: 1px solid lightgray;
+    height: auto !important;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-transition: all .3s
+}
